@@ -1,0 +1,55 @@
+//// read stats from json file and assign values
+//function readFile(file) {
+//    if(file != null){
+//        var ary = [];
+//        var obj;
+//        fs.readFile('output.json', 'utf8', function (err, data){
+//            if (err) throw err;
+//            obj = JSON.parse(data);
+//            console.log(obj);
+//        });
+//    }else{
+//        console.log("file does not contain anything");
+//    }
+//}
+
+<html>
+<body>
+<script>
+var fs = require('fs');
+    // read stats from json file and assign values
+function readFile(file) {
+    if(file != null){
+        var ary = [];
+        var obj;
+        fs.readFile('output.json', 'utf8', function (err, data){
+            if (err) throw err;
+            obj = JSON.parse(data);
+            console.log(obj);
+        });
+    }else{
+        console.log("file does not contain anything");
+    }
+}
+
+function readFile(file) {
+    if(file != null){
+        var ary = [];
+        var obj;
+        fs.readFile('output.json', 'utf8', function (err, data){
+            if (err) throw err;
+            obj = JSON.parse(data);
+            console.log(obj);
+        });
+    }else{
+        console.log("file does not contain anything");
+    }
+}
+    
+readFile('output.json');
+
+
+</script>
+
+</body>
+</html>
