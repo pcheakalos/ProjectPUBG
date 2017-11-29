@@ -14,6 +14,6 @@ function loadFile(callback){
 function init(){
     loadFile(function(response){
         var data = JSON.parse(response);
-        console.log("Hello world");
+        console.log(data);
     })
 }
