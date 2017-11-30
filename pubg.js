@@ -21,6 +21,7 @@ api.getProfileByNickname('Kun_H')
       season: SEASON.EA2017pre5, // defaults to profile.content.defaultSeason
       match: MATCH.SQUAD // defaults to SOLO
     });
+    console.log(stats);
     writeFile(stats);
   });
 
@@ -33,18 +34,3 @@ function writeFile(data){
         console.log("ID does not exist");
     }
 }
-
-// read stats from json file and assign values
-//function readFile(file){
-//    if(file != null){
-//        var ary = [];
-//        var obj;
-//        fs.readFile('output.json', 'utf8', function (err, data){
-//            if (err) throw err;
-//            obj = JSON.parse(data);
-//            console.log(obj);
-//        });
-//    }else{
-//        console.log("file does not contain anything");
-//    }
-//}
