@@ -12,8 +12,11 @@ const api = new PubgAPI({
   },
 });
 
+//get PUBG nickname from input.html
+var nickname = document.getElementById("submit");
+
 // get the stats of the user using their in game name
-api.getProfileByNickname('Kun_H')
+api.getProfileByNickname(nickname)
   .then((profile) => {
     const data = profile.content;
     const stats = profile.getStats({

@@ -20,17 +20,17 @@ function init() {
             region: data.region,
             season: data.season,
             match: data.match,
-            rounds: data.performance.roundsPlayed,
             update: data.lastUpdated,
-            win: data.performance.wins,
-            lose: data.performance.losses,
             rate: data.skillRating.rating,
+            rounds: data.performance.roundsPlayed,
+            win: data.performance.wins,
+            top10: data.performance.top10s,
             kill: data.combat.kills,
-            assist: data.combat.assists,
             suidice: data.combat.suicides,
             teamkill: data.combat.teamKills,
             headshot: data.combat.headshotKills,
-            roadkill: data.combat.roadKills
+            roadkill: data.combat.roadKills,
+            assist: data.combat.assists
         };
         console.log(profile);
     })
