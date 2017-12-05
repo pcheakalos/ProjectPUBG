@@ -1,81 +1,81 @@
 {
   "region": "agg",
   "defaultRegion": "na",
-  "season": "2017-pre6",
-  "defaultSeason": "2017-pre6",
+  "season": "2017-pre5",
+  "defaultSeason": "2017-pre5",
   "match": "squad",
-  "lastUpdated": "2017-12-01T23:11:47.2407892Z",
-  "playerName": "TheGreatMango",
-  "avatar": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/d0/d0b3d90b6be7a29f007841de8f0f5340d71aa23d.jpg",
+  "lastUpdated": "2017-12-04T19:40:03.2454983Z",
+  "playerName": "undefined",
+  "avatar": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/76/7601a256f22ab4e6a0204971656d23d6be67bf33.jpg",
   "performance": {
-    "killDeathRatio": 0.5,
+    "killDeathRatio": 1,
     "winRatio": "0",
-    "timeSurvived": 484.6,
-    "roundsPlayed": 2,
+    "timeSurvived": 4001.57,
+    "roundsPlayed": 6,
     "wins": "0",
     "winTop10Ratio": "0",
-    "top10s": 1,
-    "top10Ratio": 50,
-    "losses": 2,
-    "winPoints": 1002
+    "top10s": 2,
+    "top10Ratio": 33.3,
+    "losses": 6,
+    "winPoints": 1050
   },
   "skillRating": {
-    "rating": 1204,
-    "bestRating": 1212.64,
+    "rating": 1269,
+    "bestRating": 1268.56,
     "bestRank": "0"
   },
   "perGame": {
-    "damagePg": 88.37,
-    "headshotKillsPg": "0",
-    "healsPg": "0",
-    "killsPg": 0.5,
-    "moveDistancePg": 72.54,
-    "revivesPg": "0",
+    "damagePg": 138.33,
+    "headshotKillsPg": 0.17,
+    "healsPg": 0.83,
+    "killsPg": 1,
+    "moveDistancePg": 2192.53,
+    "revivesPg": 0.83,
     "roadKillsPg": "0",
     "teamKillsPg": "0",
-    "timeSurvivedPg": 242.3,
-    "top10sPg": 0.5
+    "timeSurvivedPg": 666.93,
+    "top10sPg": 0.33
   },
   "combat": {
-    "kills": 1,
-    "assists": "0",
+    "kills": 6,
+    "assists": 2,
     "suicides": "0",
     "teamKills": "0",
-    "headshotKills": "0",
-    "headshotKillRatio": "0",
+    "headshotKills": 1,
+    "headshotKillRatio": 0.17,
     "vehicleDestroys": "0",
     "roadKills": "0",
-    "dailyKills": 1,
-    "weeklyKills": 1,
-    "roundMostKills": 1,
-    "maxKillStreaks": 1,
+    "dailyKills": 6,
+    "weeklyKills": 6,
+    "roundMostKills": 3,
+    "maxKillStreaks": 2,
     "weaponAcquired": "0"
   },
   "survival": {
     "days": 1,
-    "longestTimeSurvived": 264.73,
-    "mostSurvivalTime": 264.73,
-    "avgSurvivalTime": 242.3
+    "longestTimeSurvived": 1640.53,
+    "mostSurvivalTime": 1640.53,
+    "avgSurvivalTime": 666.93
   },
   "distance": {
-    "walkDistance": 145.07,
-    "rideDistance": "0",
-    "moveDistance": 145.07,
-    "avgWalkDistance": 72.54,
-    "avgRideDistance": "0",
-    "longestKill": 6.57
+    "walkDistance": 6443.78,
+    "rideDistance": 6711.38,
+    "moveDistance": 13155.17,
+    "avgWalkDistance": 1073.96,
+    "avgRideDistance": 1118.56,
+    "longestKill": 14.76
   },
   "support": {
-    "heals": "0",
-    "revives": "0",
-    "boosts": "0",
-    "damageDealt": 176.73,
-    "dBNOs": 1
+    "heals": 5,
+    "revives": 5,
+    "boosts": 5,
+    "damageDealt": 829.97,
+    "dBNOs": 6
   },
   "rankData": {
-    "wins": 431825,
-    "rating": 433002,
-    "kills": 384193,
-    "winPoints": 431825
+    "wins": 2184340,
+    "rating": 2046178,
+    "kills": 1477448,
+    "winPoints": 2184340
   }
 }

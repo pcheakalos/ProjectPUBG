@@ -6,14 +6,21 @@
 <title>Project PUBG</title>
 </head>
 <body>
-    <form action = "pubg.js" method = "get">
-        <input type = "text" name = "username" placeholder = "Enter your PUBG name">
+    <form>
+        <input type = "text" id="username" name = "username" placeholder = "Enter your PUBG name">
         <button id = "submit">search</button>
     </form>
 <script>
 $("#submit").click(function(){
     username = $("#username").val();
-}
+
+    $.ajax({
+        type: "POST",
+        url: 'http://127.0.0.1:9090',
+        data: '{"nickname": ' + username + '}'
+        }
+    )
+});
 </script>
 </body>
 </html>
