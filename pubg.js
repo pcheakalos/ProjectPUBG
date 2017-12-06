@@ -1,5 +1,19 @@
 const {PubgAPI, PubgAPIErrors, REGION, SEASON, MATCH} = require('pubg-api-redis');
 const fs = require('fs');
+var http = require('http');
+var qs = require('querystring');
+var jsonString = "";
+
+http.createServer(function(req, res){
+    console.log('Request received');
+    req.on('data', function(chunk){
+        jsonString += chunk;
+    });
+    
+    req.on('end', function(){
+        console.log(jsonString);
+    });
+}).listen(9090, '127.0.0.1');
 
 // If no Redis configuration it wont be cached
 const api = new PubgAPI({
@@ -12,11 +26,8 @@ const api = new PubgAPI({
   },
 });
 
-//get PUBG nickname from input.html
-var nickname = document.getElementById("submit");
-
 // get the stats of the user using their in game name
-api.getProfileByNickname(nickname)
+api.getProfileByNickname(JSON.stringify(jsonString["nickname"]))
   .then((profile) => {
     const data = profile.content;
     const stats = profile.getStats({
@@ -27,7 +38,6 @@ api.getProfileByNickname(nickname)
     console.log(stats);
     writeFile(stats);
   });
-
 // write stats to json file
 function writeFile(data){
     if(data != null){
