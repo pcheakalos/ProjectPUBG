@@ -27,7 +27,7 @@ const api = new PubgAPI({
 });
 
 // get the stats of the user using their in game name
-api.getProfileByNickname()
+api.getProfileByNickname(JSON.stringify(jsonString["nickname"]))
   .then((profile) => {
     const data = profile.content;
     const stats = profile.getStats({
