@@ -33,16 +33,16 @@ $region = $data['region'];
 $season = $data['season'];
 $match = $data['match'];
 $update = $data['lastUpdated'];
-$rate = $data['skillRating']['rating'];
-$rounds = $data['performance']['roundsPlayed'];
-$wins = $data['performance']['wins'];
-$top10 = $data['performance']['top10s'];
-$kills = $data['combat']['kills'];
-$suidices = $data['combat']['suicides'];
-$teamkills = $data['combat']['teamKills'];
-$headshots = $data['combat']['headshotsKills'];
-$roadkills = $data['combat']['roadKills'];
-$assists = $data['combat']['assists'];
+$rate = (int)$data['skillRating']['rating'];
+$rounds = (int)$data['performance']['roundsPlayed'];
+$wins = (int)$data['performance']['wins'];
+$top10 = (int)$data['performance']['top10s'];
+$kills = (int)$data['combat']['kills'];
+$suidices = (int)$data['combat']['suicides'];
+$teamkills = (int)$data['combat']['teamKills'];
+$headshots = (int)$data['combat']['headshotsKills'];
+$roadkills = (int)$data['combat']['roadKills'];
+$assists = (int)$data['combat']['assists'];
 
 // Check connection
 if (!$conn) {
@@ -60,7 +60,8 @@ function query_to_db($conn, $sql){
     }
 }
 
-$sql = "INSERT INTO pubg (name, region, season, match, update, rate, rounds, wins, top10, kills, suicides, teamkills, headshots, roadkills, assists) VALUES ($name, $region, $season, $match, $update, $rate, $rounds, $wins, $top10, $kills, $suicides, $teamkills, $headshots, $roadkills, $assists)";
+$sql = "INSERT INTO pubg (name, region, season, match, update, rate, rounds, wins, top10, kills, suicides, teamkills, headshots, roadkills, assists)
+        VALUES ($name, $region, $season, $match, $update, $rate, $rounds, $wins, $top10, $kills, $suicides, $teamkills, $headshots, $roadkills, $assists)";
 
 query_to_db($conn, $sql);
 
