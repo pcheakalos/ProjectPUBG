@@ -12,152 +12,186 @@ function loadFile(callback) {
     xml.send(null);
 }
 
+var loadfile = $.get("output.json");
+
 // return player name
 function getName(){
 	var name = "";
-    loadFile(function(response){
-        var data = JSON.parse(response);
-		name = data;
-    })
-	return name;
+    $.when(loadfile.done(function(data, status){
+		name= data["playerName"];
+	})).then(function(x){
+		console.log(name);
+		return name;		
+	});
+	
 }
 
 // return server name
 function getRegion(){
-    var region = "";
-    loadFile(function(response){
-        var data = JSON.parse(response);
-        region = data;
-    })
-    return region;
+    var region2 = "";
+    $.when(loadfile.done(function(data, status){
+		region2 = data["region"];
+	})).then(function(x){
+		console.log(region2);
+		return region2;		
+	});
+	
 }
 
 // return sseason
 function getSeason(){
-    var season = "";
-    loadFile(function(response){
-        var data = JSON.parse(response);
-        season = data;
-    })
-    return season;
+    var season1 = "";
+    $.when(loadfile.done(function(data, status){
+		season1= data["season"];
+	})).then(function(x){
+		console.log(season1);
+		return season1;		
+	});
+	
 }
 
 // return match
 function getMatch(){
-    var match = "";
-    loadFile(function(response){
-        var data = JSON.parse(response);
-        match = data;
-    })
-    return match;
+    var match11 = "";
+     $.when(loadfile.done(function(data, status){
+		match11= data["match"];
+	})).then(function(x){
+		console.log(match11);
+		return match11;		
+	});
+	
 }
 
 // return updated time
 function getUpdated(){
     var updated = "";
-    loadFile(function(response){
-        var data = JSON.parse(response);
-        updated = data;
-    })
-    return updated;
+     $.when(loadfile.done(function(data, status){
+		updated= data["lastUpdated"];
+	})).then(function(x){
+		console.log(updated);
+		return updated;		
+	});
+	
 }
 
 // return rate of the player
 function getRate(){
 	var rate = "";
-	loadFile(function(response){
-		var data = JSON.parse(response);
-		rate = data;
-	})
-	return rate;
+     $.when(loadfile.done(function(data, status){
+		rate= data["rating"];
+	})).then(function(x){
+		console.log(rate);
+		return rate;		
+	});
+	
+
 }
 
 // return the number of rounds user played
 function getRound(){
-	var rounds = "";
-	loadFile(function(response){
-		var data = JSON.parse(response);
-		rounds = data;
-	})
-	return rounds;
+	var rounds22 = "";
+	$.when(loadfile.done(function(data, status){
+		rounds22= data["roundsPlayed"];
+	})).then(function(x){
+		console.log(rounds22);
+		return rounds22;		
+	});
+	
 }
 
 // return the number of wins user made
 function getWin(){
 	var win = "";
-	loadFile(function(response){
-		var data = JSON.parse(response);
-		win = data;
-	})
-	return win;
+	$.when(loadfile.done(function(data, status){
+		win= data["winRatio"];
+	})).then(function(x){
+		console.log(win);
+		return win;		
+	});
+	
 }
 
 // return the number of times user made in top 10
 function getTop10(){
 	var top10 = "";
-	loadFile(function(response){
-		var data = JSON.parse(response);
-		top10 = data;
-	})
-	return top10;
+	$.when(loadfile.done(function(data, status){
+		top10= data["top10s"];
+	})).then(function(x){
+		console.log(top10);
+		return top10;		
+	});
+	
 }
 
 // return the number of people the user killed
 function getKill(){
 	var kill = "";
-	loadFile(function(response){
-		var data = JSON.parse(response);
-		kill = data;
-	})
-	return kill;
+	$.when(loadfile.done(function(data, status){
+		kill= data["kills"];
+	})).then(function(x){
+		console.log(kill);
+		return kill;		
+	});
+	
 }
 
 // return the number of suicide the player commited
 function getSuicide(){
 	var suicide = "";
-	loadFile(function(response){
-		var data = JSON.parse(response);
-		suicide = data;
-	})
-	return suicide;
+	$.when(loadfile.done(function(data, status){
+		suicide= data["suicides"];
+	})).then(function(x){
+		console.log(suicide);
+		return suicide;		
+	});
+	
 }
 
 // return the number of team kills the player made
 function getTeamKill(){
 	var teamKill = "";
-	loadFile(function(response){
-		var data = JSON.parse(response);
-		teamKill = data;
-	})
-	return teamKill;
+	$.when(loadfile.done(function(data, status){
+		teamKill= data["teamKills"];
+	})).then(function(x){
+		console.log(teamKill);
+		return teamKill;		
+	});
+	
 }
 
 // return the number of headshot the player made
 function getHeadshot(){
 	var headshot = "";
-	loadFile(function(response){
-		var data = JSON.parse(response);
-		headshot = data;
-	})
-	return headshot;
+   $.when(loadfile.done(function(data, status){
+		headshot= data["avatar"];
+	})).then(function(x){
+		console.log(headshot);
+		return headshot;		
+	});
+	
 }
 
 // return the number of roadkills the player made
 function getRoadKill(){
 	var roadkill = "";
-	loadFile(function(response){
-		var data = JSON.parse(response);
-		roadkill = data;
-	})
-	return roadkill;
+   $.when(loadfile.done(function(data, status){
+		roadkill= data["roadKills"];
+	})).then(function(x){
+		console.log(roadkill);
+		return roadkill;		
+	});
+	
 }
+
 
 // reutn the number of assist the player did
 function getAssist(){
 	var assist = "";
-	loadFile(function(response){
-		var data = JSON.parse(response);
-		assist = data;
-	})
-	return assist;
+  $.when(loadfile.done(function(data, status){
+		assist= data["assists"];
+	})).then(function(x){
+		console.log(assist);
+		return assist;		
+	});
+	
 }
