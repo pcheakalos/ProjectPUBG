@@ -6,18 +6,17 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 -- Schema mydb
 -- -----------------------------------------------------
 CREATE SCHEMA IF NOT EXISTS `pubg` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci ;
-USE `mydb` ;
+USE `pubg` ;
 
 -- -----------------------------------------------------
 -- Table `mydb`.`pubg`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`pubg` (
-  `id_num` INT NOT NULL,
-  `name` VARCHAR(45) NULL,
+CREATE TABLE IF NOT EXISTS `pubg`.`mydb` (
+  `player_name` VARCHAR(45) NULL,
   `region` VARCHAR(45) NULL,
   `season` VARCHAR(45) NULL,
-  `match` VARCHAR(45) NULL,
-  `update` VARCHAR(45) NULL,
+  `matches` VARCHAR(45) NULL,
+  `last_update` VARCHAR(45) NULL,
   `rate` INT NULL,
   `rounds` INT NULL,
   `wins` INT NULL,
