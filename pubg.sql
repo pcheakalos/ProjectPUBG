@@ -12,11 +12,11 @@ USE `pubg` ;
 -- Table `mydb`.`pubg`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `pubg`.`mydb` (
-  `player_name` VARCHAR(45) NULL,
+  `name` VARCHAR(45) NULL,
   `region` VARCHAR(45) NULL,
   `season` VARCHAR(45) NULL,
-  `matches` VARCHAR(45) NULL,
-  `last_update` VARCHAR(45) NULL,
+  `match` VARCHAR(45) NULL,
+  `update` VARCHAR(45) NULL,
   `rate` INT NULL,
   `rounds` INT NULL,
   `wins` INT NULL,
