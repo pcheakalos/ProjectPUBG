@@ -40,8 +40,8 @@ function query_to_db($conn, $sql){
     }
 }
 
-$sql = "UPDATE pubg
-        SET name=$name, region=$region, season=$season, match=$match, update=$update, rate=$rate, rounds=$rounds,
+$sql = "UPDATE mydb
+        SET player_name=$name, region=$region, season=$season, matches=$match, last_update=$update, rate=$rate, rounds=$rounds,
             wins=$wins, top10=$top10, kills=$kills, suicides=$suidices, teamkills=$teamkills, headshots=$headshots,
             roadkills=$roadkills, assists=$assists";
 
