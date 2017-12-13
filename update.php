@@ -41,7 +41,7 @@ function query_to_db($conn, $sql){
 }
 
 $sql = "UPDATE mydb
-        SET name=$name, region=$region, season=$season, match=$match, update=$update, rate=$rate, rounds=$rounds,
+        SET name='$name', region='$region', season='$season', `match`='$match', `update`='$update', rate=$rate, rounds=$rounds,
             wins=$wins, top10=$top10, kills=$kills, suicides=$suidices, teamkills=$teamkills, headshots=$headshots,
             roadkills=$roadkills, assists=$assists";
 
