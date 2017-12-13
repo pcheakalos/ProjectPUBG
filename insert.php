@@ -60,8 +60,8 @@ function query_to_db($conn, $sql){
     }
 }
 
-$sql = "INSERT INTO mydb (name, region, season, match, update, rate, rounds, wins, top10, kills, suicides, teamkills, headshots, roadkills, assists)
-        VALUES ($name, $region, $season, $match, $update, $rate, $rounds, $wins, $top10, $kills, $suicides, $teamkills, $headshots, $roadkills, $assists)";
+$sql = "INSERT INTO mydb (name, region, season, `match`, `update`, rate, rounds, wins, top10, kills, suicides, teamkills, headshots, roadkills, assists)
+        VALUES ('$name', '$region', '$season', '$match', '$update', $rate, $rounds, $wins, $top10, $kills, $suidices, $teamkills, $headshots, $roadkills, $assists)";
 
 query_to_db($conn, $sql);
 
