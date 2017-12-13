@@ -26,20 +26,40 @@
         </form>
     </div>    
 <script>
+// ajax call when search button is clicked
 $("#submit").click(function(){
     username = $("#username").val();
-
+	// send input username to pubg.js
     $.ajax({
         type: "POST",
         url: 'http://127.0.0.1:9091',
-        data: '{"nickname": ' + "'"  + username + "'"  + ' }',
-		success: openDisplay()
+        data: '{"nickname": ' + "'"  + username + "'"  + ' }'
+	})
+	// send input username to select.php
+	$.ajax({
+		type: "POST",
+		url: "select.php",
+		data: '{"nickname": ' + "'"  + username + "'"  + ' }',
+		success: display(response, status)
 	})
 });
+
+// response is object that contains query result
+// not using status
+function display(response, status){
+	var url = "";
+	var index = 0;
 	
-function openDisplay(){
-	window.open('test2.html');
-};
+	$.each(response, function(key, value){
+		url +=  key + "=" + value;
+		index++;
+		if(index != response.length){
+			url += "&";
+		}
+	})
+	window.open('test2.html?' + url');
+	}}
+				//in display.php use $_GET to get data from here
 </script>
 </body>
 </html>
