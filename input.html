@@ -22,7 +22,7 @@
     <div class = "input">
         <form>
             <input type = "text" id="username" name = "username" placeholder = "Enter your PUBG name" style = "height: 50px" ></input>
-				<button id = "submit" style = "height: 50px" onclick = "window.open('test2.html')">search</button>
+				<button id = "submit" style = "height: 50px">search</button>
         </form>
     </div>    
 <script>
@@ -32,10 +32,14 @@ $("#submit").click(function(){
     $.ajax({
         type: "POST",
         url: 'http://127.0.0.1:9091',
-        data: '{"nickname": ' + "'"  + username + "'"  + ' }'
-        }
-    )
+        data: '{"nickname": ' + "'"  + username + "'"  + ' }',
+		success: openDisplay()
+	})
 });
+	
+function openDisplay(){
+	window.open('test2.html');
+};
 </script>
 </body>
 </html>
