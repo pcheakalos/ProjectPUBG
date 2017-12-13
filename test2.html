@@ -89,7 +89,7 @@ $(document).ready(function(){
 		$("#player").text(name);
 		$("#region1").text(region2);
 		$("#season2").text(season1);
-		$(".round123").text(rounds22);
+		$("#round123").text(rounds22);
 		$("#topten").text(top10);
 		$("#match123").text(match11);
 		$("#avatarpic").text(headshot);
@@ -119,11 +119,11 @@ $(document).ready(function(){
 	</tr>
     <tr>
 		<td> Players </td>
-        <td id="player"> </td>
+        <td id="player"> <?php $row["name"]; ?> </td>
         <td> Rounds </td>
-        <td class="round123">  </td>
-		<td> Rounds </td>
-		<td class="round123">  </td>
+        <td id="round123">  </td>
+		<td> Team Kills </td>
+		<td id="teamkills123">  </td>
 		
 		</tr>
     <tr>
@@ -155,8 +155,8 @@ $(document).ready(function(){
         <td id="lastupdate">  </td>
 		<td></td>
 		<td>  </td>
-		<td> Team Kills </td>
-        <td id="teamkills123">  </td>
+		<td>  </td>
+        <td >  </td>
 		</tr>
 
 <br>
