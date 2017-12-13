@@ -23,10 +23,10 @@ CREATE TABLE IF NOT EXISTS `pubg`.`mydb` (
   `top10` INT NULL,
   `kills` INT NULL,
   `suicides` INT NULL,
-  `teamkills` INT NULL,
-  `headshots` INT NULL,
-  `roadkills` INT NULL,
-  `assists` INT NULL)
+  `teamkills` INT NOT NULL,
+  `headshots` INT NOT NULL,
+  `roadkills` INT NOT NULL,
+  `assists` INT NOT NULL)
 ENGINE = InnoDB;
 
 
