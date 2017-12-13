@@ -37,10 +37,7 @@ $teamkills = (int)$data['combat']['teamKills'];
 $headshots = (int)$data['combat']['headshotsKills'];
 $roadkills = (int)$data['combat']['roadKills'];
 $assists = (int)$data['combat']['assists'];
-<<<<<<< HEAD
-=======
 
->>>>>>> f08a171a2d1ec16a42f35741025cbfa9f5dc056d
 // Check connection
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
@@ -54,15 +51,10 @@ function query_to_db($conn, $sql){
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }
 }
-<<<<<<< HEAD
-$sql = "INSERT INTO mydb (name, region, season, `match`, `update`, rate, rounds, wins, top10, kills, suicides, teamkills, headshots, roadkills, assists)
-        VALUES ('$name', '$region', '$season', '$match', '$update', $rate, $rounds, $wins, $top10, $kills, $suidices, $teamkills, $headshots, $roadkills, $assists)";
-=======
 
 $sql = "INSERT INTO mydb (`name`, region, season, `match`, `update`, rate, rounds, wins, top10, kills, suicides, teamkills, headshots, roadkills, assists)
         VALUES ('$name', '$region', '$season', '$match', '$update', $rate, $rounds, $wins, $top10, $kills, $suidices, $teamkills, $headshots, $roadkills, $assists)";
 
->>>>>>> f08a171a2d1ec16a42f35741025cbfa9f5dc056d
 query_to_db($conn, $sql);
 mysqli_close($conn);
 ?>
