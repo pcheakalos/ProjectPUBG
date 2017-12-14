@@ -19,17 +19,7 @@
 </style>
 
 <script>
-function validateForm() {
-    // you can write a code for validating your forms (if you want).
- var x = document.forms["form"]["form"].value;
-    if (x == " ") {
-        alert("The form must be filled out!");
-        return false;
-    } else{
-    	alert("Form accepted...");
-    	return false;
-    }
-}
+
 </script>
 
 </head>
@@ -37,63 +27,28 @@ function validateForm() {
 
 
 <?php 
-require "Data/Config/config.php";
-//$server = "localhost";
-//$username = "root";
-//$password = "root";
-//$db = "pubg";
-
-
-//'<form name="Sakila" action='form_display.php' method='POST' onsubmit="return validateForm()">';
-/*
-*/
-// Create connection
-$conn = mysqli_connect($server, $username, $password, $db);
-
-// Check connection
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
-}
-echo "Connected successfully<br><br>";
-// forms need to be generated here inside the PHP tag. 
-
-// Select data from the "city" table.
-$obj = [];
-$sql = "SELECT name, region, season, `match`, `update`, rate, rounds, wins, top10, kills, suicides, teamkills, headshots, roadkills, assists
-FROM `pubg`.`mydb` where region is not null;"
-;
-$result = mysqli_query($conn, $sql);
-if (mysqli_num_rows($result) > 0) {   
-    while($row = mysqli_fetch_assoc($result)) {
-        $obj["name"] = $row["name"];
-		$obj["rounds"] = $row["rounds"];
-		$obj["teamkills"] = $row["teamkills"];
-		$obj["region"] = $row["region"];
-		$obj["top10"] = $row["top10"];
-		$obj["assists"] = $row["assists"];
-		$obj["season"] = $row["season"];
-		$obj["rate"] = $row["rate"];
-		$obj["roadkills"] = $row["roadkills"];
-		$obj["match"] = $row["match"];
-		$obj["wins"] = $row["wins"];
-		$obj["suicides"] = $row["suicides"];
-		$obj["update"] = $row["update"];
-		
-		
-	}
-}
-//echo "<pre>";
-	//	print_r($obj);
-		//echo "</pre>";
-		
+//$result = mysqli_query($conn, $sql);
+        $obj["name"] = $_GET["name"];
+		$obj["rounds"] = $_GET["rounds"];
+		$obj["teamkills"] = $_GET["teamkills"];
+		$obj["region"] = $_GET["region"];
+		$obj["top10"] = $_GET["top10"];
+		$obj["assists"] = $_GET["assists"];
+		$obj["season"] = $_GET["season"];
+		$obj["rate"] = $_GET["rate"];
+		$obj["roadkills"] = $_GET["roadkills"];
+		$obj["match"] = $_GET["match"];
+		$obj["wins"] = $_GET["wins"];
+		$obj["suicides"] = $_GET["suicides"];
+		$obj["update"] = $_GET["update"];
 	 ?>
 	 
 	 <table>
-    <tr> <td><th> Play </td></th> 
+    <tr> <td><th> Play </th></td> 
 		 
-		 <td><th> Wins </td></th>
+		 <td><th> Wins </th></td>
 		 
-		 <td><th> Kills </td></th> 
+		 <td><th> Kills </th></td> 
 	</tr>
     <tr>
 		<td> Players </td>

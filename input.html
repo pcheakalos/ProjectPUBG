@@ -2,7 +2,7 @@
 <html>
 <head>
     <script src = "http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type = "text/javascript" src = "pubg.js"></script>
+<!--    <script type = "text/javascript" src = "pubg.js"></script>-->
     <style>
         div.input{
             position: absolute;
@@ -15,39 +15,49 @@
         body {
             background-size: cover;
         }
+		#submit {
+			height: 30px;
+			background: gray;
+			cursor: pointer;
+			width: 100px;
+			text-align: center;
+			padding-top: 10px;
+			display: inline-block;
+		}
+		
     </style>
 <title>Project PUBG</title>
-</head>
-<body background= "/CSS/pubg.jpg">
-    <div class = "input">
-        <form>
-            <input type = "text" id="username" name = "username" placeholder = "Enter your PUBG name" style = "height: 50px" ></input>
-				<button id = "submit" style = "height: 50px">search</button>
-        </form>
-    </div>    
 <script>
-// ajax call when search button is clicked
-$("#submit").click(function(){
-    username = $("#username").val();
-	// send input username to pubg.js
-    $.ajax({
-        type: "POST",
-        url: 'http://127.0.0.1:9091',
-        data: '{"nickname": ' + "'"  + username + "'"  + ' }'
-	})
-	// send input username to select.php
-	$.ajax({
-		type: "POST",
-		url: "select.php",
-		data: '{"nickname": ' + "'"  + username + "'"  + ' }',
-		success: display(response, status)
-	})
-	console.log(display());
+	
+$(document).ready(function(){
+	
+	// ajax call when search button is clicked
+	$("#submit").click(function(){
+		username = $("#username").val();
+		// send input username to pubg.js
+	    $.ajax({
+	        type: "POST",
+	        url: 'http://127.0.0.1:9091',
+	        data: '{"nickname":' + "'"  + username + "'"  + ' }'
+		});
+		// send input username to select.php
+		$.ajax({
+			type: "POST",
+			url: "select.php",
+			data: {"nickname": username},
+			success: function(response, status){
+				console.log(response);
+				console.log(JSON.parse(response));
+				display(JSON.parse(response));	
+			}
+		});
+	});
 });
+
 
 // response is object that contains query result
 // not using status
-function display(response, status){
+function display(response){
 	var url = "";
 	var index = 1;
 	
@@ -58,11 +68,20 @@ function display(response, status){
 			url += "&";
 		}
 	})
-	console.log(url);
 	window.open('test2PHPstyle.php?' + url);
-	}
+}
 				//in display.php use $_GET to get data from here
 </script>
+</head>
+<body background= "/CSS/pubg.jpg">
+    <div class = "input">
+        <form>
+            <input type = "text" id="username" name = "username" placeholder = "Enter your PUBG name" style = "height: 50px" />
+			<span id = "submit">search</span>	
+        </form>
+		
+    </div>    
+
 </body>
 </html>
 
