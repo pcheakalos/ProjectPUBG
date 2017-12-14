@@ -42,13 +42,14 @@ $("#submit").click(function(){
 		data: '{"nickname": ' + "'"  + username + "'"  + ' }',
 		success: display(response, status)
 	})
+	console.log(display());
 });
 
 // response is object that contains query result
 // not using status
 function display(response, status){
 	var url = "";
-	var index = 0;
+	var index = 1;
 	
 	$.each(response, function(key, value){
 		url +=  key + "=" + value;
@@ -58,7 +59,7 @@ function display(response, status){
 		}
 	})
 	console.log(url);
-	window.open('test2.html?' + url);
+	window.open('test2PHPstyle.php?' + url);
 	}
 				//in display.php use $_GET to get data from here
 </script>

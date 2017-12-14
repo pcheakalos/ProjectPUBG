@@ -19,10 +19,11 @@
 <body>
 
 <?php 
-$server = "localhost";
-$username = "root";
-$password = "root";
-$db = "pubg";
+require "Data/Config/config.php"
+//$server = "localhost";
+//$username = "root";
+//$password = "root";
+//$db = "pubg";
 $conn = mysqli_connect($server, $username, $password, $db);
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());

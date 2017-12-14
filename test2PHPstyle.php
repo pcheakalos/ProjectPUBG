@@ -37,11 +37,11 @@ function validateForm() {
 
 
 <?php 
-
-$server = "localhost";
-$username = "root";
-$password = "root";
-$db = "pubg";
+require "Data/Config/config.php";
+//$server = "localhost";
+//$username = "root";
+//$password = "root";
+//$db = "pubg";
 
 
 //'<form name="Sakila" action='form_display.php' method='POST' onsubmit="return validateForm()">';
