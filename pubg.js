@@ -47,7 +47,7 @@ http.createServer(function(req, res){
 function writeFile(data){
     if(data != null){
         var rawData = JSON.stringify(data, null, 2);
-        fs.writeFile('Data/output.json', rawData);
+        fs.writeFile('data/output.json', rawData);
     }else{
         console.log("ID does not exist");
     }
