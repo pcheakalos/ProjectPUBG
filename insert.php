@@ -1,5 +1,8 @@
 <?php
-require "config.php";
+$server = "localhost";
+$username = "root";
+$password = "root";
+$db = "pubg";
 // Create connection
 $conn = mysqli_connect($server, $username, $password, $db);
 // read json contents
