@@ -1,5 +1,5 @@
 <?php
-require "Data/Config/config.php";
+require "data/config/config.php";
 
 $conn = mysqli_connect($server, $username, $password, $db);
 
@@ -11,24 +11,6 @@ if (!$conn) {
 }
 
 $sql = "SELECT * FROM mydb WHERE name = " . '"' . $name . '"' . ";";
-// A function for general queries.
-//function query_to_db($conn, $sql){
-//    $result = mysqli_query($conn, $sql);
-//	$resultAry = array();
-//	
-//	if(mysqli_num_rows($result) > 0) {
-//		while($row = mysqli_fetch_assoc($result)) {
-//			$resultAry[] = $row["`name`"];
-//		}
-//	}
-//
-////    if ($result) {   
-////        echo "Your query was successful";
-////    } else {
-////        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-////    }
-//	return $resultAry;
-//}
 $result = mysqli_query($conn, $sql);
 
 
@@ -40,24 +22,5 @@ if (mysqli_num_rows($result) > 0) {
 } else {
     echo "No results..";
 }
-//$sql = "SELECT * FROM mydb WHERE name = " . '"' . $name . '"' . ";";
-//$result = query_to_db($conn, $sql);
-
-//if (mysqli_num_rows($result) > 0) {   
-//    while($row = mysqli_fetch_assoc($result)) {
-//        echo "<tr>";
-//        // var_dump($row);
-//        echo "<td>" . $row["first_name"] . " " . $row['last_name'] . "</td><td>". $row['email'] 
-//        . "</td><td>". $row['address'] . "</td><td>". $row['city'] . "</td>";
-//        echo "<br>";
-//        echo "</tr>";
-//    }
-//} else {
-//    echo "No results..";
-//}
-
-
-
-
 mysqli_close($conn);
 ?>

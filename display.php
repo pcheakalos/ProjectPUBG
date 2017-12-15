@@ -2,6 +2,9 @@
 <html>
 <head>	
 <style>
+	body {
+            background-size: cover;
+	}
 
 
 	 tr {
@@ -23,11 +26,10 @@
 </script>
 
 </head>
-<body>
+<body background = "css/pubg.jpg">
 
 
 <?php 
-//$result = mysqli_query($conn, $sql);
         $obj["name"] = $_GET["name"];
 		$obj["rounds"] = $_GET["rounds"];
 		$obj["teamkills"] = $_GET["teamkills"];
@@ -51,7 +53,7 @@
 		 <td><th> Kills </th></td> 
 	</tr>
     <tr>
-		<td> Players </td>
+		<td> Player </td>
         <td id="player"> <?php echo $obj["name"]; ?> </td>
         <td> Rounds </td>
         <td id="round123"><?php echo $obj["rounds"]; ?>  </td>
