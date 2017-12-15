@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+<table>
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+	
+}
+
+	 tr {
+		height: 30px;
+		text-align: Left;
+		padding-left: 100px;
+	}
+    
+   
+	td {
+		text-allign: left;
+		padding-left:100px;
+
+		}
+
+    
+</style>
+<script src = "http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script type = "text/javascript" src="Data/Config/config.js"></script>
+<script> 
+/*getName();
+//getRegion();
+getSeason();
+getMatch();
+getUpdated();
+getRate();
+getRound();
+getWin();
+getTop10();
+getKill();
+getSuicide();
+getTeamKill();
+getHeadshot();
+
+getRoadKill();
+getAssist();
+*/
+$(document).ready(function(){
+
+	
+	var name = "";
+	var region2 = "";
+	var rounds22 = "";
+	var season1 = "";
+	var top10 = "";
+	var match11 = "";
+	var headshot = "";
+	var updated = "";
+	var rate = "";
+	var win= "";
+	var suicide= "";
+	var teamkill= 0;
+	var roadkill= 0;
+	var assist= "";
+	var test = "";
+    $.when(loadfile.done(function(data, status){
+		name= data["playerName"];
+		region2= data["region"];
+		rounds22= data["performance"]["roundsPlayed"];
+		season1=data["season"];
+		top10= data["performance"]["top10s"];
+		match11= data["match"];
+		headshot= data["avatar"];
+		updated= data["lastUpdated"];
+		rate= data["skillRating"]["rating"];
+		win= data["performance"]["winRatio"];
+		suicide= data["combat"]["suicides"];
+		console.log(data);
+		teamkill= data["combat"]["teamKills"];
+		if (teamkill == null){
+			test = "N/A";
+		} else {
+			test = teamkill.toString();
+		}
+		
+		roadkill= data["rankData"]["roadKills"];
+		assist= data["rankData"]["assists"];
+	})).then(function(x){
+		$("#player").text(name);
+		$("#region1").text(region2);
+		$("#season2").text(season1);
+		$("#round123").text(rounds22);
+		$("#topten").text(top10);
+		$("#match123").text(match11);
+		$("#avatarpic").text(headshot);
+		$("#lastupdate").text(updated);
+		$("#rating123").text(rate);
+		$("#winratio123").text(win);
+		$("#suicide123").text(suicide);
+		$("#teamkills123").text(test);
+		$("#roadkills123").text(roadkill);
+		$("#assists123").text(assist);
+	});
+	
+
+});
+
+</script>
+
+</head>
+<body>
+
+<table>
+    <tr> <td><th> Play </td></th> 
+		 
+		 <td><th> Wins </td></th>
+		 
+		 <td><th> Kills </td></th> 
+	</tr>
+    <tr>
+		<td> Players </td>
+        <td id="player"> <?php $row["name"]; ?> </td>
+        <td> Rounds </td>
+        <td id="round123">  </td>
+		<td> Team Kills </td>
+		<td id="teamkills123">  </td>
+		
+		</tr>
+    <tr>
+        <td> Region </td>
+        <td id="region1"> </td> 
+		<td> Top 10 </td>
+		<td id="topten">  </td>
+		<td> Assists </td>
+        <td id="assists123">  </td> 
+		</tr>
+    <tr>
+        <td> Season </td>
+        <td id="season2">  </td> 
+		<td> Rating </td>
+        <td id="rating123">  </td>
+		<td> Road Kills </td>
+        <td id="roadkills123">  </td>  
+		</tr>
+    <tr>
+        <td> Match </td>
+        <td id="match123">  </td> 
+		 <td> Win Ratio </td>
+        <td id="winratio123">  </td>
+		<td> Suicide </td>
+        <td id="suicide123">  </td> 
+		</tr>
+    <tr>
+        <td> Last Updated </td>
+        <td id="lastupdate">  </td>
+		<td></td>
+		<td>  </td>
+		<td>  </td>
+        <td >  </td>
+		</tr>
+
+<br>
+</table>
+
+<br>
+
+</body>
+</html>

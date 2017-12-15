@@ -1,17 +1,12 @@
 <?php
-
 require "config.php";
-
 // Create connection
 $conn = mysqli_connect($server, $username, $password, $db);
-
 // read json contents
 $file = "output.json";
 $json = file_get_contents($file);
-
 //convert json to php array
 $data = json_decode($json, true);
-
 //            name: data.playerName,
 //            region: data.region,
 //            season: data.season,
@@ -27,7 +22,6 @@ $data = json_decode($json, true);
 //            headshot: data.combat.headshotKills,
 //            roadkill: data.combat.roadKills,
 //            assist: data.combat.assists
-
 $name = $data['playerName'];
 $region = $data['region'];
 $season = $data['season'];
@@ -48,11 +42,9 @@ $assists = (int)$data['combat']['assists'];
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-
 // A function for general queries.
 function query_to_db($conn, $sql){
     $result = mysqli_query($conn, $sql);
-
     if ($result) {   
         echo "Your query was successful";
     } else {
@@ -64,8 +56,5 @@ $sql = "INSERT INTO mydb (`name`, region, season, `match`, `update`, rate, round
         VALUES ('$name', '$region', '$season', '$match', '$update', $rate, $rounds, $wins, $top10, $kills, $suidices, $teamkills, $headshots, $roadkills, $assists)";
 
 query_to_db($conn, $sql);
-
 mysqli_close($conn);
 ?>
-
-
