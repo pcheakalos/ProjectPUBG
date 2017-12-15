@@ -6,19 +6,29 @@
             background-size: cover;
 	}
 
+table{
+    border: 1px solid black;
+	border: 1px solid black;
 
+}
 	 tr {
 		height: 30px;
-		text-align: Left;
 		padding-left: 100px;
+    
+
 	}
     
    
 	td {
-		text-allign: left;
+		text-allign: center;
 		padding-left:100px;
+		border: 1px solid black;
 
 		}
+	th{
+		border: 1px solid black;
+		text-allign: center;
+	}
 </style>
 
 <script>
